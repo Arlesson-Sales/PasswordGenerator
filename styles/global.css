@@ -1,0 +1,35 @@
+html {
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+body {
+    padding: 2rem;
+    color: #252525;
+    font-family: 'inter', sans-serif;
+    background-color: #f4f4f4;
+}
+
+main {
+    margin: auto;
+    max-width: 500px;
+}
+
+header {
+    font-size: 0.8rem;
+    text-align: center;
+    padding-bottom: 2rem;
+
+    h2 {
+        font-size: 1rem;
+        color: #9d9d9d;
+        font-weight: 300;
+        padding-top: 1rem;
+    }
+}

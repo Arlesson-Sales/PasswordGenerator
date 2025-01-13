@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:itagitl,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./styles/global.css">
+        <title>Password Generator JS</title>
+    </head>
+    <body>
+        <main>
+            <header>
+                <h1>Gerador de senha</h1>
+                <h2>Ultilize nosso gerador online para criar uma senha forte e segura</h2>
+            </header>
+            <section>
+                <input id="password-out" type="text" name="password-out-input">
+                <input id="password-length" type="range" name="password-length-input" value="16" min="6" max="64">
+                <button id="copy-button">Copiar senha</button>
+            </section>
+        </main>
+        <script src="./scripts/generator.js"></script>
+    </body>
+</html>
