@@ -1,6 +1,6 @@
 const interface = {
+    copy_buttons: document.querySelectorAll(".copy-button"),
     length_input: document.querySelector("#password-length"),
-    copy_button: document.querySelector("#copy-button"),
     out: document.querySelector("#password-out")
 }
 
@@ -19,11 +19,9 @@ function generatorPassword(length)
 
 //Aplicação de eventos.
 interface.length_input.addEventListener("input", event => {
-    const password = generatorPassword(event.target.value);
-    interface.out.value = password;
+    interface.out.value = generatorPassword(event.target.value);
 });
 
-interface.copy_button.addEventListener("click", () => {
-    const password = interface.out.value;
-    window.navigator.clipboard.writeText(password);
+interface.copy_buttons.forEach(button => {
+    button.addEventListener("click", () => window.navigator.clipboard.writeText(interface.out.value))
 })

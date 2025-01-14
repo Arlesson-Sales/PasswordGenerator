@@ -18,7 +18,7 @@ body {
 
 main {
     margin: auto;
-    max-width: 500px;
+    max-width: 700px;
 }
 
 header {
@@ -31,5 +31,49 @@ header {
         color: #9d9d9d;
         font-weight: 300;
         padding-top: 1rem;
+    }
+}
+
+.default-container {
+    border-radius: 8px;
+    margin-bottom: 3rem;
+    background-color: #fff;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+.password-container {
+    display: flex;
+    align-items: center;
+    padding: 1rem 0.8rem;
+
+    #password-text-container {
+        flex: 1;
+
+        #password-out {
+            width: 100%;
+            border: none;
+            height: 35px;
+            outline: none;
+            font-size: 3rem;
+            cursor: default;
+            user-select: none;
+            border-radius: 8px;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            font-family: "Inconsolata", serif;
+        }
+
+    }
+
+    #buttons-container {
+        button {
+            opacity: 0.7;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            transition: opacity 0.2s;
+            background-color: transparent;
+            margin: 0 10px 5px 0;
+        }
     }
 }

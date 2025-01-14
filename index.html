@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:itagitl,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="./styles/global.css">
         <title>Password Generator JS</title>
     </head>
@@ -16,9 +16,24 @@
                 <h2>Ultilize nosso gerador online para criar uma senha forte e segura</h2>
             </header>
             <section>
-                <input id="password-out" type="text" name="password-out-input">
+                <div class="default-container">
+                    <div class="password-container">
+                        <div id="password-text-container">
+                            <input id="password-out" type="text" name="password-out-input">
+                        </div>
+                        <div id="buttons-container">
+                            <button id="copy-button-top" class="copy-button">
+                                <img src="./assets/copy.png" alt="botão de copiar senha" width="42">
+                            </button>
+                            <button id="new-button">
+                                <img src="./assets/reload.png" alt="botão de recriar senha" width="42">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
                 <input id="password-length" type="range" name="password-length-input" value="16" min="6" max="64">
-                <button id="copy-button">Copiar senha</button>
+                <button class="copy-button">Copiar senha</button>
             </section>
         </main>
         <script src="./scripts/generator.js"></script>
