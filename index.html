@@ -32,8 +32,36 @@
                     </div>
                 </div>
 
-                <input id="password-length" type="range" name="password-length-input" value="16" min="6" max="64">
-                <button class="copy-button">Copiar senha</button>
+                <div class="default-container">
+                    <div class="controls-header">
+                        <h3>Personalizar</h3>
+                        <div class="horizontal-line"></div>
+                    </div>
+                    <div class="controls-body">
+                        <div class="password-controls-container">
+                            <p>Tamanho: <span>16</span></p>
+                            <input id="password-length" type="range" name="password-length-input" value="16" min="6" max="64">
+                        </div>
+                        <div class="checkbox-controls-container">
+                            <label class="checkbox-container">
+                                <span class="checkbox-mark"></span>
+                                <span class="checkbox-text">Maiúsculas</span>
+                                <input id="uppercase-checkbox" type="checkbox" checked>
+                            </label>
+                            <label class="checkbox-container">
+                                <span class="checkbox-mark"></span>
+                                <span class="checkbox-text">Números</span>
+                                <input id="numbers-checkbox" type="checkbox" checked>
+                            </label>
+                            <label class="checkbox-container">
+                                <span class="checkbox-mark"></span>
+                                <span class="checkbox-text">Símbolos</span>
+                                <input id="symbols-checkbox" type="checkbox" checked>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <button id="copy-button-end" class="copy-button">Copiar senha</button>
             </section>
         </main>
         <script src="./scripts/generator.js"></script>
