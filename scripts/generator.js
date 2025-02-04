@@ -12,6 +12,30 @@ const interface = {
     }
 }
 
+function calculeSecurity(length)
+{
+    let percent_limit = 40;
+    if (interface.password_config["uppercase-checkbox"]) percent_limit += 20;
+    if (interface.password_config["symbols-checkbox"]) percent_limit += 20;
+    if (interface.password_config["numbers-checkbox"]) percent_limit += 20;
+
+    const security = Math.round(length / 35 * percent_limit);
+    const bar = document.querySelector("#bar");
+
+    if (security <= 10)
+    {
+        bar.classList.remove("safe");
+        bar.classList.add("unsafe");
+    }
+    else
+    {
+        bar.classList.add("safe");
+        bar.classList.remove("unsafe");
+    }
+
+    bar.style.width = `${security}%`;
+}
+
 function generatorPassword(length)
 {
     let chars = "abcdefghijklmnopqrstuvxwyz";
@@ -20,7 +44,6 @@ function generatorPassword(length)
     if (interface.password_config["uppercase-checkbox"]) chars += "ABCDEFGHIJKLMNOPQRSTUVXWYZ";
     if (interface.password_config["symbols-checkbox"]) chars += "!@#$%&*()[]";
     if (interface.password_config["numbers-checkbox"]) chars += "1234567890";
-
     
     for (let index = 0; index < length; index++)
     {
@@ -36,6 +59,7 @@ function generateAndShowPassword()
     let password_length = interface.length_input.value;
     document.querySelector("#password-controls-container").children[0].innerHTML = `Tamanho <span>${password_length}</span>`;
     interface.out.value = generatorPassword(password_length);
+    calculeSecurity(password_length);
 }
 
 function checkmarkToggle(check_name, index)
@@ -54,3 +78,5 @@ interface.length_input.addEventListener("input", generateAndShowPassword);
 interface.copy_buttons.forEach(button => button.addEventListener("click", () => window.navigator.clipboard.writeText(interface.out.value)));
 //Evento - Definir os caracteres que terá na senha gerada.
 interface.password_config.labels.forEach((label, index) => label.addEventListener("click", (event) => checkmarkToggle(event.target.id, index)));
+//Eventos - Botão de gerar nova senha.
+document.querySelector("#new-button").addEventListener("click", generateAndShowPassword);
