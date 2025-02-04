@@ -21,19 +21,20 @@ function calculeSecurity(length)
 
     const security = Math.round(length / 35 * percent_limit);
     const bar = document.querySelector("#bar");
-
-    if (security <= 10)
-    {
-        bar.classList.remove("safe");
-        bar.classList.add("unsafe");
-    }
-    else
-    {
-        bar.classList.add("safe");
-        bar.classList.remove("unsafe");
-    }
-
+    
+    bar.style.backgroundColor = security <= 10 ? "var(--unsafe-color)" : "var(--safe-color)";
     bar.style.width = `${security}%`;
+}
+
+function validPassWord(password)
+{
+    if (interface.password_config["uppercase-checkbox"] && !password.match("[A-Z]"))
+        return false;
+    if (interface.password_config["symbols-checkbox"] && !password.match("[!@#$%&*()[]]"))
+        return false;
+    if (interface.password_config["numbers-checkbox"] && !password.match("[0-9]"))
+        return false;
+    return true;
 }
 
 function generatorPassword(length)
@@ -50,7 +51,7 @@ function generatorPassword(length)
         let random_value = Math.floor(Math.random() * chars.length);
         password += chars.substring(random_value, random_value + 1);
     }
-    return password;
+    return validPassWord(password) ? password : generatorPassword(length);
 }
 
 //Funções para eventos.

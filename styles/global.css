@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #c926d8;
+    --primary-color: #247ce8;
     --secundary-color: #9d9d9d;
     --safe-color: #27cb27;
     --unsafe-color: #e33737;
@@ -78,9 +78,13 @@ header {
             border: none;
             outline: none;
             cursor: pointer;
-            transition: opacity 0.2s;
-            background-color: transparent;
             margin: 0 10px 5px 0;
+            transition: all 0.3s;
+            background-color: transparent;
+        }
+
+        button:hover {
+            scale: 1.2;
         }
     }
 }
@@ -106,14 +110,6 @@ header {
     transition: all linear 0.3s;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
-}
-
-.safe {
-    background-color: var(--safe-color);
-}
-
-.unsafe {
-    background-color: var(--unsafe-color);
 }
 
 /*
@@ -235,7 +231,7 @@ header {
     width: 130px;
     margin: auto;
     border: none;
-    opacity: 0.7;
+    opacity: 0.8;
     color: #fff;
     display: block;
     cursor: pointer;
