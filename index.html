@@ -30,6 +30,9 @@
                             </button>
                         </div>
                     </div>
+                    <div class="default-container security-bar">
+                        <div class="safe" id="bar"></div>
+                    </div>
                 </div>
 
                 <div class="default-container">
@@ -38,23 +41,23 @@
                         <div class="horizontal-line"></div>
                     </div>
                     <div class="controls-body">
-                        <div class="password-controls-container">
+                        <div id="password-controls-container">
                             <p>Tamanho: <span>16</span></p>
-                            <input id="password-length" type="range" name="password-length-input" value="16" min="6" max="64">
+                            <input id="password-length" type="range" name="password-length-input" value="16" min="4" max="64">
                         </div>
                         <div class="checkbox-controls-container">
                             <label class="checkbox-container">
-                                <span class="checkbox-mark"></span>
+                                <span class="checkbox-mark checkbox-mark-checked"></span>
                                 <span class="checkbox-text">Maiúsculas</span>
                                 <input id="uppercase-checkbox" type="checkbox" checked>
                             </label>
                             <label class="checkbox-container">
-                                <span class="checkbox-mark"></span>
+                                <span class="checkbox-mark checkbox-mark-checked"></span>
                                 <span class="checkbox-text">Números</span>
                                 <input id="numbers-checkbox" type="checkbox" checked>
                             </label>
                             <label class="checkbox-container">
-                                <span class="checkbox-mark"></span>
+                                <span class="checkbox-mark checkbox-mark-checked"></span>
                                 <span class="checkbox-text">Símbolos</span>
                                 <input id="symbols-checkbox" type="checkbox" checked>
                             </label>
